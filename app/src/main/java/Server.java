@@ -83,6 +83,11 @@ public class Server {
                 numOfParticipants++;
                 System.out.println("Number of participants in the chat: " + numOfParticipants);
                 broadcast(nickname + " joined the chat!");
+
+                /**
+                 * This loop is used to get the message from the Client,
+                 * each connected client (thread) will wait for the input.
+                 */
                 String message;
                 while ((message = in.readLine()) != null) {
                     if (message.startsWith("/nick ")) {

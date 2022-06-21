@@ -22,6 +22,11 @@ public class Client implements Runnable {
             Thread thread = new Thread(inputHandler);
             thread.start();
 
+            /**
+             * This loop is used to get the message from the Server,
+             * the main thread will run in a loop to collect the messages.
+             * Same logic will apply for the Server to accept messages from the client.
+             * */
             String inMessage;
             while ((inMessage = in.readLine()) != null) {
                 System.out.println(inMessage);
